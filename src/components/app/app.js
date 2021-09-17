@@ -1,15 +1,13 @@
 import React from 'react';
 import {MainPage, CartPage} from '../pages';
 import AppHeader from '../app-header';
-import  WithRestoService  from '../hoc/with-resto-service';
+
 
 import Background from './food-bg.jpg';
 import {Route, Switch} from 'react-router-dom';
 
-const App = ({RestoService}) => {
-    RestoService.getMenuItems()
-        .then( menu => console.log(menu))
-        .catch(error => {console.log('Произошла ошибка')})
+const App = () => {
+    
     return (
         <div style={{background: `url(${Background}) center center/cover no-repeat`}} className="app">
             <AppHeader total={50}/>
@@ -23,4 +21,4 @@ const App = ({RestoService}) => {
     )
 }
 
-export default WithRestoService()(App);
+export default App;
